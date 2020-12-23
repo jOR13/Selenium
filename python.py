@@ -1,27 +1,3 @@
-# from selenium import webdriver
-# from selenium.webdriver.common.keys import Keys
-
-
-# # Crear una sesión de Firefox
-# driver = webdriver.Firefox()
-# driver.implicitly_wait(30)
-# driver.maximize_window()
-
-# # Acceder a la aplicación web
-# # driver.get("http://www.google.es")
-
-# # driver.get ("https://www.facebook.com")
-# driver.get ("https://randomtodolistgenerator.herokuapp.com/library")
-
-
-# # driver.find_element_by_id("email").send_keys("chuypack@hotmail.com")
-# # driver.find_element_by_id("pass").send_keys("lol123")
-# # driver.find_element_by_id("u_0_b").click()
-
-# # Cerrar la ventana del navegador
-# # driver.quit()
-
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium import webdriver
@@ -53,9 +29,11 @@ with webdriver.Firefox() as driver:
 
     driver.get("https://todoist.com/app/#/today")
 
-    driver.find_element_by_xpath('//*[@id="agenda_view"]/div/div/div/ul/li[2]/button').click()
+    for x in todo
 
-    driver.find_element_by_xpath('//*[@id="agenda_view"]/div/div/div/ul/li[2]/form/div[1]/div[1]/div').send_keys(todo[1])
+        driver.find_element_by_xpath('//*[@id="agenda_view"]/div/div/div/ul/li[2]/button').click()
+
+        driver.find_element_by_xpath('//*[@id="agenda_view"]/div/div/div/ul/li[2]/form/div[1]/div[1]/div').send_keys(todo[x])
 
 
     driver.maximize_window()
